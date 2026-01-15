@@ -1,0 +1,338 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>DOM Methods - Visual Learning Activity</title>
+    <link rel="stylesheet" href="./style.css" type="text/css" />
+    <script src="script.js" defer></script>
+  </head>
+  <body>
+    <div class="container">
+      <!-- Header -->
+      <header class="header">
+        <h1 class="main-title">DOM Methods Visual Learning</h1>
+        <p class="subtitle">Learn getElementById, getElementsByClassName, and querySelector</p>
+      </header>
+
+      <!-- ============================================ -->
+      <!-- SECTION 1: getElementById -->
+      <!-- ============================================ -->
+      <section class="section">
+        <h2 class="section-title">Section 1: document.getElementById()</h2>
+        
+        <div class="explanation-box">
+          <h3>What is getElementById?</h3>
+          <p><strong>Purpose:</strong> Finds ONE element by its unique ID</p>
+          <p><strong>Syntax:</strong> <code>document.getElementById('id-name')</code></p>
+          <p><strong>Why use ID?</strong> IDs are UNIQUE - each ID appears only once on a page. Perfect for finding a specific element!</p>
+          <p><strong>CSS Selector:</strong> Use <code>#id-name</code> in CSS</p>
+        </div>
+
+        <!-- Exercise 1: DEMO - Shows how it works -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 1: DEMO - See how getElementById works</h3>
+          <p class="exercise-description">Watch how we select elements by ID and change them!</p>
+          
+          <div class="demo-area">
+            <button id="demo-btn-1" class="demo-button">Click Me!</button>
+            <p id="demo-text-1" class="demo-text">Original text</p>
+            <div id="demo-box-1" class="demo-box">Box 1</div>
+          </div>
+          
+          <button id="run-demo-1" class="action-button">Run Demo</button>
+          <div id="demo-result-1" class="result-box"></div>
+        </div>
+
+        <!-- Exercise 2: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 2: Your Turn - Change text with textContent</h3>
+          <p class="exercise-description">Select the element below by ID and change its text using <code>textContent</code></p>
+          
+          <div class="practice-area">
+            <p id="practice-text-1" class="practice-text">Change this text!</p>
+            <button id="practice-btn-1" class="practice-button">Change Text</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Use <code>getElementById('practice-text-1')</code> then set <code>.textContent = 'New text'</code></p>
+          </div>
+        </div>
+
+        <!-- Exercise 3: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 3: Your Turn - Change HTML with innerHTML</h3>
+          <p class="exercise-description">Select the element below by ID and change its HTML using <code>innerHTML</code></p>
+          
+          <div class="practice-area">
+            <div id="practice-html-1" class="practice-box">Original content</div>
+            <button id="practice-btn-2" class="practice-button">Change HTML</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Use <code>getElementById('practice-html-1')</code> then set <code>.innerHTML = '&lt;strong&gt;Bold text&lt;/strong&gt;'</code></p>
+          </div>
+        </div>
+
+        <!-- Exercise 4: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 4: Your Turn - Change style with getElementById</h3>
+          <p class="exercise-description">Select the element below by ID and change its color and size</p>
+          
+          <div class="practice-area">
+            <div id="practice-style-1" class="practice-box">Style me!</div>
+            <button id="practice-btn-3" class="practice-button">Change Style</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Use <code>getElementById('practice-style-1')</code> then set <code>.style.color = 'red'</code> and <code>.style.fontSize = '24px'</code></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SECTION 2: getElementsByClassName -->
+      <!-- ============================================ -->
+      <section class="section">
+        <h2 class="section-title">Section 2: document.getElementsByClassName()</h2>
+        
+        <div class="explanation-box">
+          <h3>What is getElementsByClassName?</h3>
+          <p><strong>Purpose:</strong> Finds ALL elements that share the same class name</p>
+          <p><strong>Syntax:</strong> <code>document.getElementsByClassName('class-name')</code></p>
+          <p><strong>Why use Class?</strong> Classes are REUSABLE - many elements can have the same class. Perfect for groups of similar items!</p>
+          <p><strong>CSS Selector:</strong> Use <code>.class-name</code> in CSS</p>
+          <p><strong>Returns:</strong> HTMLCollection (like an array) - you need to loop through it!</p>
+        </div>
+
+        <!-- Exercise 1: DEMO - Shows how it works -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 1: DEMO - See how getElementsByClassName works</h3>
+          <p class="exercise-description">Watch how we select MULTIPLE elements by class and change them all!</p>
+          
+          <div class="demo-area">
+            <div class="demo-card">Card 1</div>
+            <div class="demo-card">Card 2</div>
+            <div class="demo-card">Card 3</div>
+          </div>
+          
+          <button id="run-demo-2" class="action-button">Run Demo</button>
+          <div id="demo-result-2" class="result-box"></div>
+        </div>
+
+        <!-- Exercise 2: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 2: Your Turn - Change all items with textContent</h3>
+          <p class="exercise-description">Select ALL elements with class <code>item-text</code> and change their text</p>
+          
+          <div class="practice-area">
+            <p class="item-text">Item 1</p>
+            <p class="item-text">Item 2</p>
+            <p class="item-text">Item 3</p>
+            <button id="practice-btn-4" class="practice-button">Change All Items</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Use <code>getElementsByClassName('item-text')</code> then loop with <code>for (let i = 0; i &lt; items.length; i++)</code></p>
+          </div>
+        </div>
+
+        <!-- Exercise 3: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 3: Your Turn - Change all boxes with innerHTML</h3>
+          <p class="exercise-description">Select ALL elements with class <code>box-item</code> and add HTML content</p>
+          
+          <div class="practice-area">
+            <div class="box-item">Box 1</div>
+            <div class="box-item">Box 2</div>
+            <div class="box-item">Box 3</div>
+            <button id="practice-btn-5" class="practice-button">Add HTML to All</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Loop through the collection and set <code>.innerHTML = '&lt;span&gt;Updated!&lt;/span&gt;'</code></p>
+          </div>
+        </div>
+
+        <!-- Exercise 4: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 4: Your Turn - Change style of all elements</h3>
+          <p class="exercise-description">Select ALL elements with class <code>color-box</code> and change their background color</p>
+          
+          <div class="practice-area">
+            <div class="color-box">Box 1</div>
+            <div class="color-box">Box 2</div>
+            <div class="color-box">Box 3</div>
+            <div class="color-box">Box 4</div>
+            <button id="practice-btn-6" class="practice-button">Change All Colors</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: Loop through and set <code>.style.backgroundColor = 'lightblue'</code></p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- SECTION 3: querySelector -->
+      <!-- ============================================ -->
+      <section class="section">
+        <h2 class="section-title">Section 3: document.querySelector()</h2>
+        
+        <div class="explanation-box">
+          <h3>What is querySelector?</h3>
+          <p><strong>Purpose:</strong> Finds the FIRST element that matches a CSS selector</p>
+          <p><strong>Syntax:</strong> <code>document.querySelector('css-selector')</code></p>
+          <p><strong>Why use querySelector?</strong> Most FLEXIBLE! Works with any CSS selector (ID, class, tag, or complex selectors)</p>
+          <p><strong>Selectors:</strong> 
+            <code>#id-name</code> (ID), 
+            <code>.class-name</code> (class), 
+            <code>div</code> (tag), 
+            <code>div.card</code> (tag with class)
+          </p>
+          <p><strong>Returns:</strong> First matching element (or null)</p>
+        </div>
+
+        <!-- Exercise 1: DEMO - Shows how it works -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 1: DEMO - See how querySelector works</h3>
+          <p class="exercise-description">Watch how we can select by ID (#), class (.), or tag name!</p>
+          
+          <div class="demo-area">
+            <div id="query-demo-1" class="query-box">Selected by ID</div>
+            <div class="query-box">Selected by class</div>
+            <p class="query-text">Selected by tag</p>
+          </div>
+          
+          <div class="button-group">
+            <button id="run-demo-3a" class="action-button">Select by ID (#)</button>
+            <button id="run-demo-3b" class="action-button">Select by Class (.)</button>
+            <button id="run-demo-3c" class="action-button">Select by Tag (p)</button>
+          </div>
+          <div id="demo-result-3" class="result-box"></div>
+        </div>
+
+        <!-- Exercise 2: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 2: Your Turn - Use querySelector with ID</h3>
+          <p class="exercise-description">Use <code>querySelector('#target-id')</code> to select and change text</p>
+          
+          <div class="practice-area">
+            <div id="target-id" class="practice-box">Target me with #target-id</div>
+            <button id="practice-btn-7" class="practice-button">Select by ID</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: <code>querySelector('#target-id')</code> - don't forget the # for IDs!</p>
+          </div>
+        </div>
+
+        <!-- Exercise 3: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 3: Your Turn - Use querySelector with Class</h3>
+          <p class="exercise-description">Use <code>querySelector('.target-class')</code> to select the FIRST matching element</p>
+          
+          <div class="practice-area">
+            <div class="target-class">First item</div>
+            <div class="target-class">Second item</div>
+            <div class="target-class">Third item</div>
+            <button id="practice-btn-8" class="practice-button">Select First by Class</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: <code>querySelector('.target-class')</code> - don't forget the . for classes!</p>
+          </div>
+        </div>
+
+        <!-- Exercise 4: Student Practice -->
+        <div class="exercise-box">
+          <h3 class="exercise-title">Exercise 4: Your Turn - Use querySelector with complex selector</h3>
+          <p class="exercise-description">Use <code>querySelector('div.special')</code> to select a div with class special</p>
+          
+          <div class="practice-area">
+            <div class="special">Special div 1</div>
+            <p class="special">Special paragraph (not selected)</p>
+            <div class="special">Special div 2</div>
+            <button id="practice-btn-9" class="practice-button">Select div.special</button>
+          </div>
+          
+          <div class="code-hint">
+            <p>Hint: <code>querySelector('div.special')</code> selects only divs with class special</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- COMPARISON SECTION -->
+      <!-- ============================================ -->
+      <section class="section">
+        <h2 class="section-title">ID vs Class: When to Use What?</h2>
+        
+        <div class="comparison-grid">
+          <div class="comparison-box id-box">
+            <h3>Use ID when:</h3>
+            <ul>
+              <li>Element is UNIQUE (only one exists)</li>
+              <li>You need ONE specific element</li>
+              <li>Examples: main button, form, header</li>
+              <li>CSS: <code>#my-id</code></li>
+              <li>JS: <code>getElementById('my-id')</code></li>
+              <li>JS: <code>querySelector('#my-id')</code></li>
+            </ul>
+          </div>
+          
+          <div class="comparison-box class-box">
+            <h3>Use Class when:</h3>
+            <ul>
+              <li>MULTIPLE elements share purpose</li>
+              <li>You want to style/control a GROUP</li>
+              <li>Examples: cards, buttons, list items</li>
+              <li>CSS: <code>.my-class</code></li>
+              <li>JS: <code>getElementsByClassName('my-class')</code></li>
+              <li>JS: <code>querySelector('.my-class')</code></li>
+            </ul>
+          </div>
+        </div>
+      </section>
+
+      <!-- ============================================ -->
+      <!-- FINAL CHALLENGE -->
+      <!-- ============================================ -->
+      <section class="section">
+        <h2 class="section-title">Final Challenge: Use All Methods!</h2>
+        
+        <div class="exercise-box">
+          <h3 class="exercise-title">Challenge: Build a Shopping Cart</h3>
+          <p class="exercise-description">Use all three methods to add items to cart and calculate total</p>
+          
+          <div class="challenge-area">
+            <div class="products-grid">
+              <div class="product-item">
+                <span class="product-name">Apple</span>
+                <span class="product-price">$1.00</span>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+              <div class="product-item">
+                <span class="product-name">Banana</span>
+                <span class="product-price">$0.50</span>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+              <div class="product-item">
+                <span class="product-name">Orange</span>
+                <span class="product-price">$1.25</span>
+                <button class="add-to-cart">Add to Cart</button>
+              </div>
+            </div>
+            
+            <div id="cart-display" class="cart-display">
+              <h4>Your Cart:</h4>
+              <div id="cart-items"></div>
+              <p>Total: $<span id="cart-total">0.00</span></p>
+              <button id="clear-cart" class="action-button">Clear Cart</button>
+            </div>
+          </div>
+        </div>
+      </section>
+    </div>
+  </body>
+</html>
